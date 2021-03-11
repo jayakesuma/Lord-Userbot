@@ -24,10 +24,10 @@ from userbot.events import register
 
 # ========================= CONSTANTS ============================
 AFKSTR = [
-    f"**Maaf Lord {ALIVE_NAME} Sedang AFK!**",
-    f"**Maaf Lord {ALIVE_NAME} Sedang AFK\n Tunggu Sampai Dia Kembali Online!**",
-    f"**Lord {ALIVE_NAME} Sedang AFK\n Tunggulah Sampai Online**",
-    f"**Maaf Lord {ALIVE_NAME} Sedang AFK!**",
+    f"**kangen sama aku {ALIVE_NAME} ya sayang? makanya kamu tag diriku**",
+    f"**Lord agung {ALIVE_NAME} Sedang galau\n hibur lah gw njir**",
+    f"**Gw {ALIVE_NAME} Sedang off njir\n cokk nanti tag gw lagi**",
+    f"** {ALIVE_NAME} Bjirr gw lagi off malah di tag cok**",
 ]
 
 
@@ -62,16 +62,16 @@ async def set_afk(afk_e):
     afk_start = start_1.replace(microsecond=0)
     if string:
         AFKREASON = string
-        await afk_e.edit(f"**✘ AFK!**\n**Lord Telah AFK**\
-        \n☛ **Alasan:** `{string}`")
+        await afk_e.edit(f"**Gw kabur cok**\n**kabooorrrr**\
+        \n☛ **gw afk karna:** `{string}`")
     else:
-        await afk_e.edit("**✘ AFK!**\n**Lord Telah AFK**")
+        await afk_e.edit("**buset gw off dulu!**\n**berak dulu sana**")
     if user.last_name:
         await afk_e.client(UpdateProfileRequest(first_name=user.first_name, last_name=user.last_name + "【AFK】"))
     else:
         await afk_e.client(UpdateProfileRequest(first_name=user.first_name, last_name="【AFK】"))
     if BOTLOG:
-        await afk_e.client.send_message(BOTLOG_CHATID, "#AFK\n**Lord Telah AFK!**")
+        await afk_e.client.send_message(BOTLOG_CHATID, "#AFK\n**Lord sedang off**")
     ISAFK = True
     afk_time = datetime.now()  # pylint:disable=E0602
     raise StopPropagation
